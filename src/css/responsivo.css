@@ -1,0 +1,90 @@
+/* ajustes feitos de acordo com cada tamanho de tela */
+@media(max-width: 1280px) {
+    body {
+        padding: 30px;
+    }
+    .conteudo {
+        min-height: 90vh;
+    }
+}
+
+@media(max-width: 768px) {
+    .conteudo {
+        min-height: 88vh;
+    }
+
+    .informacoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .informacoes .descricao {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media(max-width: 425px) {
+    .informacoes .logo {
+        max-width: 300px;
+    }
+
+    .informacoes .descricao {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .menu-lateral {
+        position: static;
+        min-height: auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-lateral ul {
+        flex-direction: row;
+        position: fixed;
+        bottom: 20px;
+    }
+
+    .conteudo {
+        min-height: 70vh;
+        gap: 50px;
+    }
+
+    body {
+        padding: 40px;
+    }
+
+    .botoes-carrossel {
+        margin-top: 100px;
+    }
+}
+
+@media(max-width: 400px) {
+    .informacoes .descricao {
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: auto;
+
+    }
+    .botoes-carrossel {
+        margin-top: auto;
+        }
+}
+
+@media(max-width: 280px){
+    .informacoes .descricao {
+        font-size: 15px;
+        line-height: 15px;
+        margin-top: auto;
+
+    }
+    .informacoes .logo {
+        max-width: 200px;
+}
+.botoes-carrossel {
+    margin-top: 100px;
+}
+}

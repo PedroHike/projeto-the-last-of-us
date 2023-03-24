@@ -1,0 +1,161 @@
+body {
+    /* fonte */
+    font-family: 'poppins', sans-serif;
+    /* largura maxima que ocupa no navegador */
+    max-width: 1280px;
+    /* margem, usada para deixar conteudo adapitavel ao tamanho da janela */
+    margin: 0 auto;
+}
+
+main:after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.053658963585434205) 50%, rgba(0,0,0,1) 90%);
+    z-index: -1;
+}
+
+.conteudo {
+    /* /usar cor de fundo para saber onde está mexendo */
+    background-color: rgba(38, 119, 190, 0);
+    /* usar sempre que quiser alinhar elementos com mais facilidade */
+    display: flex;
+    /* complemento do display flex, colum para deixar um item debaixo do outro */
+    flex-direction: column;
+    /* usado para definir uma altura minima, 100 = Porcentagem VH = altura do monitor  */
+    min-height: 100vh;
+    /* usado para centralizar os elementos de acordo com a altura ou largura dependendo do alinhamento*/
+    justify-content: space-evenly;
+}
+
+.informacoes .logo {
+    /* largura da logo, no qual se adapta o tamanho geral */
+    max-width: 350px;
+    /* usado para inverter a cor da logo */
+    filter: invert(1);
+    /* usado para dar um espaçamento abaixo */
+    margin-bottom: 80px;
+    transition: 0.3s ease-in-out;
+}
+
+.informacoes .logo:hover{
+    transform: scale(1.2);
+}
+
+.informacoes .descricao {
+    /* usado para determinar a largura ocupada em porcentagem, em relação a largura da janela */
+    width: 49%;
+    /* tamanho da fonte */
+    font-size: 24px;
+    /* cor da fonte */
+    color: rgb(255, 255, 255);
+    /* espaçamento entre linhas do texto */
+    line-height: 30px;
+}
+
+.botoes-carrossel {
+    display: flex;
+    /* usado para centralizar itens horizontal ou verticalmente, conforme alinhamento */
+    justify-content: center;
+    /* usado para dar espaçamento entre itens */
+    gap: 20px;
+}
+
+.botoes-carrossel .botao {
+    background-color: rgb(255, 255, 255);
+    /* determinar altura */
+    width: 15px;
+    /* determinar largura */
+    height: 15px;
+    /* determinar o raio da borda, deixando redondo */
+    border-radius: 50%;
+    /* criar uma borda em volta do botão */
+    border: 2px solid white;
+    /* usado para quando passar o mouse em cima, informar que é clicavel */
+    cursor: pointer;
+    /* border-color: white; */
+}
+
+    /* pegando uma classe mais especifica para colocar uma cor de fundo diferente para informar visualmente que está selecionado */
+.botoes-carrossel .botao.selecionado {
+    background-color: #1d8346;
+}
+
+.menu-lateral {
+    /* usado para colocar o elemento em um local fixo na tela */
+    position: fixed;
+    /* apos usar position, é usado para especificar onde sera colocar, direita, esquerda, top ou baixo em px*/
+    top: 0;
+    right: 20px;
+    /* determinar tamalho da área */
+    width: 30px;
+    display: flex;
+
+    /* justify-content: center; */
+
+    /* usado para dar o tamanho da tela */
+    min-height: 100vh;
+    /* usado para alinhar verticalmente */
+    align-items: center;
+}
+
+.menu-lateral ul {
+    /* desbloquear os icones */
+    display: flex;
+    /* arrumar os icones em coluna */
+    flex-direction: column;
+    /* colocar distancia entre os icones */
+    gap: 15px;
+}
+
+.menu-lateral .icone {
+    /* determinar tamanho do icone */
+    width: 30px;
+    /* inverter a cor */
+    filter: invert(1);
+    /* fazer com que o movimento do aumento de tamanho seja suave, determinado o tempo que ele leva para fazer isso */
+    transition: 0.3s ease-in-out;
+}
+
+    /* fazer com que o icone escale (aumente de tamanho) em uma proporção 1 */
+.menu-lateral .icone:hover {
+    transform: scale(1.2);
+}
+
+.carrossel{
+    /* fixar imagem para que ela possa sobrepor */
+    position: fixed;
+    /* ajudar imagem para o canto e top */
+    top: 0;
+    left: 0;
+    /* colocar para preencher toda a tela */
+    width: 100%;
+    z-index: -1;
+}
+
+.carrossel .imagem{
+    /* colocando a imagem 100% da largura da imagem */
+    width: 100%;
+    /* colocar  a imagem na altura do monitor*/
+    height: 100vh;
+    /* usado para que a imagem nao distorça, mas sim manter a proporção da imagem */
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s
+}
+
+.carrossel .imagem.ativa{
+    display: block;
+}
+
+@keyframes mudarImagem{
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+}

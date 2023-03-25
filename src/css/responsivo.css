@@ -72,6 +72,9 @@
     .botoes-carrossel {
         margin-top: auto;
         }
+    .informacoes .logo {
+        max-width: 200px;
+}
 }
 
 @media(max-width: 280px){
@@ -81,9 +84,7 @@
         margin-top: auto;
 
     }
-    .informacoes .logo {
-        max-width: 200px;
-}
+    
 .botoes-carrossel {
     margin-top: 100px;
 }
